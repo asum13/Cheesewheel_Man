@@ -1,6 +1,7 @@
 #include "Vector2d.h"
 #include <raylib.h>
 #include <math.h>
+#include "Player.h"
 
 float Vector2d::CalculateMagnitude()
 {
@@ -40,3 +41,4 @@ Vector2d Vector2d::NormalizeVector()
 
 	return normalizedVector;
 }
+

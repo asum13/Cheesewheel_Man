@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include "Vector2d.h"
 #include "Player.h"
+#include "Wall.h"
 
 int main()
 {
@@ -14,23 +15,29 @@ int main()
 	Player player;
 	player.position = { halfScreenWidth, halfScreenHeight };
 
-
+	//Window Setup
 	InitWindow(screenWidth, screenHeight, "Cheese Wheel Man");
 	SetTargetFPS(60);
 
+	//Wall Setup
+	Wall wall;
+
+
 	while (!WindowShouldClose())
 	{
-		Vector2d aimDirection = player.PlayerDirection();
-		//Updates
 
 		//Movement
 		player.Move();
+
+
 
 		//Drawing
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		player.Draw(aimDirection);
+		wall.DrawnWall(100, 100, 200, 10);
+
+		player.Draw(player.lookingDirection);
 		EndDrawing();
 	}
 

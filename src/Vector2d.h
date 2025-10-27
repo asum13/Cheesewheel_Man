@@ -5,6 +5,7 @@ public:
 
 	float x;
 	float y;
+	Player player;
 
 	float CalculateMagnitude();;
 
@@ -12,7 +13,6 @@ public:
 
 	Vector2d ScaleVector(float inScalar);;
 
-	Vector2d NormalizeVector();;
-
+	Vector2d NormalizeVector();
 };
 
