@@ -3,6 +3,7 @@
 #include "Vector2d.h"
 #include <iostream>
 using namespace std;
+Vector2d vector2d;
 
 
 void Player::Move()
@@ -42,5 +43,13 @@ void Player::Draw(Vector2d aimDirection)
 {
 	DrawCircle(position.x, position.y, size, YELLOW);
 	DrawLine(position.x, position.y, position.x + aimDirection.x * size,
-		position.y + aimDirection.y * size, GREEN);
+	position.y + aimDirection.y * size, GREEN);
+
+	Vector2d pointPoint = vector2d.FindPoint(aimDirection);
+	float xColitionCheck = pointPoint.x + position.x;
+	float yColitionCheck = pointPoint.y + position.y;
+	colitionPoint = { xColitionCheck, yColitionCheck };
+
+	DrawCircle(xColitionCheck, yColitionCheck, 2.f, RED);
+	
 }
