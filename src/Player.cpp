@@ -10,22 +10,22 @@ void Player::Move()
 {
 	//Decide player direction
 
-	if (IsKeyDown(KEY_A))
+	if (IsKeyPressed(KEY_A))
 	{
 		currentDirection = {-1.f, 0.f};
 		lookingDirection = { -1.f, 0.f };
 	}
-	if (IsKeyDown(KEY_W))
+	if (IsKeyPressed(KEY_W))
 	{
 		currentDirection = { 0.f, -1.f };
 		lookingDirection = { 0.f, -1.f };
 	}
-	if (IsKeyDown(KEY_D))
+	if (IsKeyPressed(KEY_D))
 	{
 		currentDirection = { 1.f, 0.f };
 		lookingDirection = { 1.f, 0.f };
 	}
-	if (IsKeyDown(KEY_S))
+	if (IsKeyPressed(KEY_S))
 	{
 		currentDirection = { 0.f, 1.f };
 		lookingDirection = { 0.f, 1.f };

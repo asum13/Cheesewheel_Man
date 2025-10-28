@@ -36,6 +36,7 @@ int main()
 	{
 
 		//Movement
+
 		player.Move();
 
 
@@ -50,17 +51,17 @@ int main()
 
 		if (wall.isWall == true)
 		{
-			if (player.colitionPoint.DistanceToTarget(wall.wallPos) < (wall.xWidth))
+			if (player.colitionPoint.DistanceToTarget(wall.wallPos) < (wall.xWidthHigh) || player.colitionPoint.DistanceToTarget(wall.wallPos) > (wall.xWidthLow))
 			{
 				player.currentDirection = { 0.f, 0.f };
 				player.lookingDirection = { 0.f, 0.f };
 				cout << "It's working somehow";
 			}
-			if (player.colitionPoint.DistanceToTarget(wall.wallPos) < (wall.yLength))
+			if (player.colitionPoint.DistanceToTarget(wall.wallPos) < (wall.yLengthHigh) || player.colitionPoint.DistanceToTarget(wall.wallPos) > (wall.yLengthLow))
 			{
 				player.currentDirection = { 0.f, 0.f };
 				player.lookingDirection = { 0.f, 0.f };
-				cout << "Somehow it's working. ";
+				cout << "somehow it's working. ";
 			}
 		}
 

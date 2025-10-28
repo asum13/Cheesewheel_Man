@@ -4,10 +4,10 @@
 void Wall::DrawnWall(int xPos, int yPos, int width, int length)
 {
 	DrawRectangle(xPos, yPos, width, length, WHITE);
-	xPosition = xPos;
-	yPosition = yPos;
-	Vector2d wallPlacement = { yPosition, xPosition };
+	Vector2d wallPlacement = { xPos, yPos };
 	wallPlacement = wallPos;
-	xWidth = width;
-	yLength = length;
+	xWidthLow = xPos - (width/2);
+	xWidthHigh = xPos + (width / 2);
+	yLengthLow = yPos - (length / 2);
+	yLengthHigh = yPos + (length / 2);
 }
