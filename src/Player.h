@@ -13,5 +13,8 @@ public:
 	void Move();
 
 	void Draw(Vector2d aimDirection);
+
+	void PlayerToObject(Vector2d object);
+
 };
 

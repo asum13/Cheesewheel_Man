@@ -1,9 +1,13 @@
 #include "Player.h"
-#include <raylib.h>
 #include "Vector2d.h"
+#include "Wall.h"
+
+#include <raylib.h>
 #include <iostream>
+
 using namespace std;
 Vector2d vector2d;
+Wall wall;
 
 
 void Player::Move()
@@ -48,8 +52,22 @@ void Player::Draw(Vector2d aimDirection)
 	Vector2d pointPoint = vector2d.FindPoint(aimDirection);
 	float xColitionCheck = pointPoint.x + position.x;
 	float yColitionCheck = pointPoint.y + position.y;
-	colitionPoint = { xColitionCheck, yColitionCheck };
+	colitionPoint = { xColitionCheck, yColitionCheck };	
 
 	DrawCircle(xColitionCheck, yColitionCheck, 2.f, RED);
 	
+}
+
+
+void Player::PlayerToObject(Vector2d object)
+{
+	DrawLine(object.x, object.y, colitionPoint.x, colitionPoint.y, ORANGE);
+
+	if (colitionPoint.DistanceToTarget(object) < (wall.wallWidth || wall.wallLength))
+	{
+		DrawLine(object.x, object.y, colitionPoint.x, colitionPoint.y, PURPLE);
+		currentDirection = { 0.f, 0.f };
+		lookingDirection = { 0.f, 0.f };
+
+	}
 }

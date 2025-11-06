@@ -29,6 +29,23 @@ Vector2d Vector2d::ScaleVector(float inScalar)
 	return scaledVector;
 }
 
+Vector2d Vector2d::VectorTowardsTarget(Vector2d inTargetVector)
+{
+	float targetedXVector = inTargetVector.x - x;
+	float targetedYVector = inTargetVector.y - y;
+	Vector2d targetedVector{ targetedXVector , targetedYVector };
+
+	return targetedVector;
+}
+
+float Vector2d::DistanceToTarget(Vector2d inTargetedVector)
+{
+	Vector2d targetedVector = VectorTowardsTarget(inTargetedVector);
+	float distanceToTargetedVector = targetedVector.CalculateMagnitude();
+
+	return distanceToTargetedVector;
+}
+
 Vector2d Vector2d::NormalizeVector()
 {
 	if (CalculateMagnitude() == 0)
@@ -51,19 +68,4 @@ Vector2d Vector2d::FindPoint(Vector2d aimDirection)
 	return pointPoint;
 }
 
-Vector2d Vector2d::VectorTowardsTarget(Vector2d inTargetVector)
-{
-	float targetedXVector = inTargetVector.x - x;
-	float targetedYVector = inTargetVector.y - y;
-	Vector2d targetedVector{ targetedXVector , targetedYVector };
 
-	return targetedVector;
-}
-
-float Vector2d::DistanceToTarget(Vector2d inTargetedVector)
-{
-	Vector2d targetedVector = VectorTowardsTarget(inTargetedVector);
-	float distanceToTargetedVector = targetedVector.CalculateMagnitude();
-
-	return distanceToTargetedVector;
-}

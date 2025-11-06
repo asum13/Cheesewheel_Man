@@ -1,13 +1,19 @@
 #include "Wall.h"
 #include <raylib.h>
 
-void Wall::DrawnWall(int xPos, int yPos, int width, int length)
+
+
+Vector2d Wall::DrawnWall(float xPos, float yPos, int width, int length)
 {
 	DrawRectangle(xPos, yPos, width, length, WHITE);
-	Vector2d wallPlacement = { xPos, yPos };
-	wallPlacement = wallPos;
-	xWidthLow = xPos - (width/2);
-	xWidthHigh = xPos + (width / 2);
-	yLengthLow = yPos - (length / 2);
-	yLengthHigh = yPos + (length / 2);
+	wallXPos = (xPos + (width / 2));
+	wallYPos = (yPos + (length / 2));
+	Vector2d wallPoint = { wallXPos, wallYPos };
+	DrawCircle(wallPoint.x, wallPoint.y, 3, RED);
+	wallPosition = wallPoint;
+	wallWidth = width;
+	wallLength = length;
+	return wallPosition;
 }
+
+
