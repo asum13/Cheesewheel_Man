@@ -17,7 +17,7 @@ public:
 
 	Vector2d NormalizeVector();
 
-	Vector2d FindPoint(Vector2d aimDirection);
+	Vector2d FindPoint(Vector2d aimDirection, Vector2d position, float size);
 
 	void PlayerToObject(Vector2d object);
 

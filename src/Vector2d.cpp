@@ -2,7 +2,6 @@
 #include <raylib.h>
 #include <math.h>
 #include "Player.h"
-Player player;
 
 float Vector2d::CalculateMagnitude()
 {
@@ -60,10 +59,10 @@ Vector2d Vector2d::NormalizeVector()
 	return normalizedVector;
 }
 
-Vector2d Vector2d::FindPoint(Vector2d aimDirection)
+Vector2d Vector2d::FindPoint(Vector2d aimDirection, Vector2d position, float size)
 {
-	float xPoint = player.position.x + aimDirection.x * player.size;
-	float yPoint = player.position.y + aimDirection.y * player.size;
+	float xPoint = position.x + aimDirection.x * size;
+	float yPoint = position.y + aimDirection.y * size;
 	Vector2d pointPoint = { xPoint, yPoint };
 	return pointPoint;
 }
