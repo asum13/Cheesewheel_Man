@@ -10,6 +10,8 @@ public:
 	Vector2d lookingDirection{ 0.f, 0.f };
 	Vector2d colissionPoint = { 0.f, 0.f };
 
+	int coinsCollected = 0;
+
 	void Move();
 
 	void Draw();

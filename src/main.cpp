@@ -31,6 +31,7 @@ int main()
 
 	
 
+	Wall coinArray[3];
 
 
 	while (!WindowShouldClose())
@@ -47,18 +48,40 @@ int main()
 
 		//Setting up debug lines from player to wall (Note, change i < x and wallArray[x] to match number of walls.)
 		Wall wallArray[3];
-		wallArray[0].DrawnWall(20, 20, 600, 20);
-		wallArray[1].DrawnWall(50, 50, 10, 100);
-		wallArray[2].DrawnWall(70, 70, 100, 900);
+		wallArray[0].DrawnWall(20, 20, 600, 20, WHITE);
+		wallArray[1].DrawnWall(50, 50, 10, 100, WHITE);
+		wallArray[2].DrawnWall(70, 70, 100, 900, WHITE);
 		
-
-
+		
 
 		player.Draw();
 
 		for (int i = 0; i < 3; i++)
 		{
-			wallArray[2].WallToObject(player.colissionPoint);
+			if (wallArray[i].WallToObject(player.colissionPoint) == true)
+			{
+				player.currentDirection = { 0.f, 0.f };
+				player.lookingDirection = { 0.f, 0.f };
+			}
+		}
+
+		for (int i = 0; i < 3; i++)
+		{
+			if (coinArray[i].isActive == true)
+			{
+				coinArray[0].DrawnWall(380, 200, 20, 20, YELLOW);
+				coinArray[1].DrawnWall(760, 100, 20, 20, YELLOW);
+				coinArray[2].DrawnWall(1200, 400, 20, 20, YELLOW);
+
+
+				if (coinArray[i].WallToObject(player.colissionPoint) == true)
+				{
+					player.coinsCollected += 1;
+					coinArray[i].isActive = false;
+					cout << player.coinsCollected;
+				}
+
+			}
 		}
 
 

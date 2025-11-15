@@ -6,37 +6,41 @@ using namespace std;
 
 Player player;
 
-Vector2d Wall::DrawnWall(float xPos, float yPos, int width, int length)
+Vector2d Wall::DrawnWall(float xPos, float yPos, int width, int length, Color color)
 {
-	DrawRectangle(xPos, yPos, width, length, WHITE);
-	wallWidth = width;
-	wallLength = length;
+	if (isActive == true)
+	{
+		DrawRectangle(xPos, yPos, width, length, color);
+	
+		wallWidth = width;
+		wallLength = length;
 
-	wallRight = xPos + width;
-	wallDown = yPos + length;
-	wallLeftPos = xPos;
-	wallUpPos = yPos;
+		wallRight = xPos + width;
+		wallDown = yPos + length;
+		wallLeftPos = xPos;
+		wallUpPos = yPos;
 
-	Vector2d wallPoint = { wallLeftPos, wallUpPos };
-	wallPosition = wallPoint;
-	DrawCircle(wallPoint.x, wallPoint.y, 3, RED);
+		Vector2d wallPoint = { wallLeftPos, wallUpPos };
+		wallPosition = wallPoint;
+		DrawCircle(wallPoint.x, wallPoint.y, 3, RED);
 	
 
-	return wallPosition;
+		return wallPosition;
+	}
 }
 
-void Wall::WallToObject(Vector2d object)
+bool Wall::WallToObject(Vector2d object)
 {
-	DrawLine(wallPosition.x, wallPosition.y, object.x, object.y, ORANGE);
-
-	cout << object.x - wallLeftPos << "\n";
-
 	
 	if (((object.x - wallRight) <= 0) && ((object.x - wallLeftPos) > 0))
 	{
-		object = { 0.f, 0.f };
-		player.currentDirection = object;
-		player.lookingDirection = object;
+		if (((object.y - wallDown) <= 0) && ((object.y - wallUpPos) > 0))
+		{
+			return true;
+		}
 	}
+
+
+	return false;
 }
 
