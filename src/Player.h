@@ -9,12 +9,13 @@ public:
 	Vector2d currentDirection = { 0.f, 0.f };
 	Vector2d lookingDirection{ 0.f, 0.f };
 	Vector2d colissionPoint = { 0.f, 0.f };
+	bool gotHit = false;
 
 	int coinsCollected = 0;
 
 	void Move();
 
-	void Draw();
+	void Update();
 
 	//void PlayerToObject(Vector2d object);
 

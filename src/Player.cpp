@@ -41,7 +41,7 @@ void Player::Move()
 
 
 
-void Player::Draw()
+void Player::Update()
 {
 	DrawCircle(position.x, position.y, size, YELLOW);
 	DrawLine(position.x, position.y, position.x + lookingDirection.x * size,
