@@ -144,6 +144,10 @@ int main()
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
 				player.lookingDirection = { 0.f, 0.f };
+				for (int i = 0; i < 3; i++)
+				{
+					coinArray[i].isActive = true;
+				}
 				gameRunning = true;
 			}
 		}
