@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Wall.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -11,6 +12,8 @@ int main()
 {
 	int screenWidth = 1600;
 	int screenHeight = 1024;
+	int currentLevel = 1;
+
 
 	float halfScreenWidth = (float)(screenWidth / 2);
 	float halfScreenHeight = (float)(screenHeight / 2);
@@ -84,6 +87,24 @@ int main()
 			}
 		}
 
+		//Resets level and adds dificulty once we get enemies
+
+		if (player.coinsCollected == 3)
+		{
+			currentLevel += 1;
+			for (int i = 0; i < 3; i++)
+			{
+				coinArray[i].isActive = true;
+			}
+			player.position = { halfScreenWidth, halfScreenHeight };
+			player.coinsCollected = 0;
+			player.currentDirection = { 0.f, 0.f };
+			player.lookingDirection = { 0.f, 0.f };
+		}
+
+		string levelString = to_string(currentLevel);
+		string levelText = "Level: " + levelString;
+		DrawText(levelText.c_str(), 50, 10, 60, PURPLE);
 
 		EndDrawing();
 	}

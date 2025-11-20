@@ -45,15 +45,14 @@ void Player::Draw()
 {
 	DrawCircle(position.x, position.y, size, YELLOW);
 	DrawLine(position.x, position.y, position.x + lookingDirection.x * size,
-	position.y + lookingDirection.y * size, GREEN);
+		position.y + lookingDirection.y * size, GREEN);
 
 	Vector2d pointPoint = vector2d.FindPoint(lookingDirection, position, size);
 	float xColitionCheck = pointPoint.x;
 	float yColitionCheck = pointPoint.y;
-	colissionPoint = { xColitionCheck, yColitionCheck };	
+	colissionPoint = { xColitionCheck, yColitionCheck };
 
 	DrawCircle(xColitionCheck, yColitionCheck, 2.f, RED);
-	
 }
 
 
