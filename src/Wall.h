@@ -16,3 +16,5 @@ public:
 	Vector2d DrawnWall(float xPos, float yPos, int width, int length, Color color);
 	bool WallToObject(Vector2d object);
 };;
+
+void DrawMaze();
