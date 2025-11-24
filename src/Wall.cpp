@@ -42,7 +42,7 @@ bool Wall::WallToObject(Vector2d object)
 	return false;
 }
 
-void DrawMaze()
+bool Wall::DrawMaze(Player player)
 {
 	float  S = GetScreenWidth() / 20; // Square size
 	Wall maze[100];
@@ -75,5 +75,13 @@ void DrawMaze()
 	maze[17].DrawnWall(S * 4, S * 10,  S * 1,  S * 4, WHITE);
 	
 	maze[18].DrawnWall(S * 15, S * 8,  S * 4,  S * 1, WHITE);
+
+	for (int i = 0; i < 100; i++)
+	{
+		if (maze[i].WallToObject(player.colissionPoint) == true)
+		{
+			return true;
+		}
+	}
 }
 

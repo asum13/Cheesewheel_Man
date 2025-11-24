@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2d.h"
 #include <raylib.h>
+#include "Player.h"
 
 class Wall
 {
@@ -15,6 +16,6 @@ public:
 	Vector2d wallPosition = { wallLeftPos, wallUpPos };
 	Vector2d DrawnWall(float xPos, float yPos, int width, int length, Color color);
 	bool WallToObject(Vector2d object);
+	bool DrawMaze(Player player);
 };;
 
-void DrawMaze();
