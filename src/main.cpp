@@ -74,7 +74,6 @@ int main()
 			if (wall.DrawMaze(player) == true)
 			{
 				player.currentDirection = { 0.f, 0.f };
-				player.lookingDirection = { 0.f, 0.f };
 			}
 
 
@@ -83,7 +82,6 @@ int main()
 				if (wallArray[i].WallToObject(player.colissionPoint) == true)
 				{
 					player.currentDirection = { 0.f, 0.f };
-					player.lookingDirection = { 0.f, 0.f };
 				}
 			}
 
@@ -93,7 +91,7 @@ int main()
 				{
 					coinArray[0].DrawnWall(100, 100, 20, 20, YELLOW);
 					coinArray[1].DrawnWall(760, 100, 20, 20, YELLOW);
-					coinArray[2].DrawnWall(1200, 400, 20, 20, YELLOW);
+					coinArray[2].DrawnWall(1000, 450, 20, 20, YELLOW);
 
 
 					if (coinArray[i].WallToObject(player.colissionPoint) == true)
@@ -110,9 +108,12 @@ int main()
 			enemy.pointList[2] = { 400, 400 };
 
 			enemy.Patrol();
+
+
 			enemy.HitPlayer(player);
 
-			//Resets level and adds dificulty once we get enemies
+			//Resets level and adds dificulty once we get enemies. We *could* make this a function but it's only called once in the whole game.
+			//If we added different lose or level complete conditions then we could shorten this into a du
 
 			if (player.coinsCollected == 3)
 			{
@@ -124,12 +125,12 @@ int main()
 				player.position = { halfScreenWidth, halfScreenHeight };
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
-				player.lookingDirection = { 0.f, 0.f };
 				enemy.size += 5.f;
 				enemy.speedMulti += 0.2;
 			}
 			if (enemy.HitPlayer(player) == true)
 			{
+				//"gameRunning" Bool checks if the 
 				gameRunning = false;
 			}
 
@@ -151,7 +152,6 @@ int main()
 				player.position = { halfScreenWidth, halfScreenHeight };
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
-				player.lookingDirection = { 0.f, 0.f };
 				for (int i = 0; i < 3; i++)
 				{
 					coinArray[i].isActive = true;
