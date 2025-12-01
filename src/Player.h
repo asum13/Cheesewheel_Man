@@ -4,7 +4,7 @@ class Player
 {
 public:
 	Vector2d position;
-	float playerSpeed = 200.f;
+	float playerSpeed = 400.f;
 	float size = 30.f;
 	Vector2d currentDirection = { 0.f, 0.f };
 	Vector2d colissionPoint = { 0.f, 0.f };

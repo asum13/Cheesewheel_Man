@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include "Enemy.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ int main()
 	int screenHeight = 1024;
 	int currentLevel = 1;
 	bool gameRunning = true;
+	srand(time(0));
 
 
 	float halfScreenWidth = (float)(screenWidth / 2);
@@ -27,6 +29,7 @@ int main()
 	// Enemy Setip
 	Enemy enemy;
 	enemy.position = { 200, 200 };
+	//int negRandomizer = 0;
 
 
 	//Window Setup
@@ -89,40 +92,40 @@ int main()
 			{
 				if (coinArray[i].isActive == true)
 				{
-					coinArray[0].DrawnWall(100, 100, 20, 20, YELLOW);
-					coinArray[1].DrawnWall(310, 100, 20, 20, YELLOW);
-					coinArray[2].DrawnWall(500, 100, 20, 20, YELLOW);
-					coinArray[3].DrawnWall(675, 100, 20, 20, YELLOW);
-					coinArray[4].DrawnWall(850, 100, 20, 20, YELLOW);
-					coinArray[5].DrawnWall(1050, 100, 20, 20, YELLOW);
-					coinArray[6].DrawnWall(1250, 100, 20, 20, YELLOW);
-					coinArray[7].DrawnWall(1460, 100, 20, 20, YELLOW);
-					coinArray[8].DrawnWall(1460, 260, 20, 20, YELLOW);
-					coinArray[9].DrawnWall(1310, 260, 20, 20, YELLOW);
-					coinArray[10].DrawnWall(1080, 275, 20, 20, YELLOW);
-					coinArray[11].DrawnWall(905, 275, 20, 20, YELLOW);
-					coinArray[12].DrawnWall(680, 275, 20, 20, YELLOW);
+					coinArray[0].DrawnWall(100, 100, 30, 40, YELLOW);
+					coinArray[1].DrawnWall(310, 100, 30, 40, YELLOW);
+					coinArray[2].DrawnWall(500, 100, 30, 40, YELLOW);
+					coinArray[3].DrawnWall(675, 100, 30, 40, YELLOW);
+					coinArray[4].DrawnWall(850, 100, 30, 40, YELLOW);
+					coinArray[6].DrawnWall(1250, 100, 30, 40, YELLOW);
+					coinArray[7].DrawnWall(1460, 100, 30, 40, YELLOW);
+					coinArray[8].DrawnWall(1460, 260, 30, 40, YELLOW);
+					coinArray[5].DrawnWall(1050, 100, 30, 40, YELLOW);
+					coinArray[9].DrawnWall(1310, 260, 30, 40, YELLOW);
+					coinArray[10].DrawnWall(1080, 275, 30, 40, YELLOW);
+					coinArray[12].DrawnWall(680, 275, 30, 40, YELLOW);
+					coinArray[11].DrawnWall(905, 275, 30, 40, YELLOW);
 
-					coinArray[13].DrawnWall(905, 450, 20, 20, YELLOW);
-					coinArray[14].DrawnWall(1150, 450, 20, 20, YELLOW);
+					coinArray[13].DrawnWall(905, 450, 30, 40, YELLOW);
+					coinArray[14].DrawnWall(1150, 450, 30, 40, YELLOW);
 
-					coinArray[15].DrawnWall(110, 300, 20, 20, YELLOW);
-					coinArray[16].DrawnWall(110, 550, 20, 20, YELLOW);
-					coinArray[17].DrawnWall(350, 550, 20, 20, YELLOW);
+					coinArray[15].DrawnWall(110, 300, 30, 40, YELLOW);
+					coinArray[16].DrawnWall(110, 550, 30, 40, YELLOW);
+					coinArray[17].DrawnWall(350, 550, 30, 40, YELLOW);
 
-					coinArray[18].DrawnWall(300, 300, 20, 20, YELLOW);
-					coinArray[19].DrawnWall(510, 300, 20, 20, YELLOW);
-					coinArray[20].DrawnWall(510, 500, 20, 20, YELLOW);
-					coinArray[21].DrawnWall(190, 810, 20, 20, YELLOW);
-					coinArray[22].DrawnWall(500, 810, 20, 20, YELLOW);
-					coinArray[23].DrawnWall(700, 810, 20, 20, YELLOW);
-					coinArray[24].DrawnWall(900, 810, 20, 20, YELLOW);
-					coinArray[25].DrawnWall(1200, 810, 20, 20, YELLOW);
-					coinArray[26].DrawnWall(1450, 810, 20, 20, YELLOW);
-					coinArray[27].DrawnWall(1450, 450, 20, 20, YELLOW);
-					coinArray[28].DrawnWall(1450, 580, 20, 20, YELLOW);
-					coinArray[29].DrawnWall(1310, 450, 20, 20, YELLOW);
-					coinArray[30].DrawnWall(1310, 580, 20, 20, YELLOW);
+					coinArray[18].DrawnWall(300, 300, 30, 40, YELLOW);
+					coinArray[19].DrawnWall(510, 300, 30, 40, YELLOW);
+					coinArray[20].DrawnWall(510, 500, 30, 40, YELLOW);
+					coinArray[21].DrawnWall(190, 810, 30, 40, YELLOW);
+					coinArray[22].DrawnWall(500, 810, 30, 40, YELLOW);
+					coinArray[23].DrawnWall(700, 810, 30, 40, YELLOW);
+					coinArray[24].DrawnWall(900, 810, 30, 40, YELLOW);
+					coinArray[25].DrawnWall(1200, 810, 30, 40, YELLOW);
+					coinArray[26].DrawnWall(1450, 810, 30, 40, YELLOW);
+					coinArray[27].DrawnWall(1450, 450, 30, 40, YELLOW);
+					coinArray[28].DrawnWall(1450, 580, 30, 40, YELLOW);
+					coinArray[29].DrawnWall(1310, 450, 30, 40, YELLOW);
+					coinArray[30].DrawnWall(1310, 580, 30, 40, YELLOW);
 
 
 					
@@ -137,9 +140,9 @@ int main()
 
 				}
 			}
-			enemy.pointList[0] = { 200, 200, };
-			enemy.pointList[1] = { 600, 200 };
-			enemy.pointList[2] = { 400, 400 };
+			enemy.pointList[0] = enemy.point1;
+			enemy.pointList[1] = enemy.point2;
+			enemy.pointList[2] = enemy.point3;
 
 			enemy.Patrol();
 
@@ -149,7 +152,7 @@ int main()
 			//Resets level and adds dificulty once we get enemies. We *could* make this a function but it's only called once in the whole game.
 			//If we added different lose or level complete conditions then we could shorten this into a du
 
-			if (player.coinsCollected == 31)
+			if (player.coinsCollected == 1)
 			{
 				currentLevel += 1;
 				for (int i = 0; i < 31; i++)
@@ -161,6 +164,27 @@ int main()
 				player.currentDirection = { 0.f, 0.f };
 				enemy.size += 5.f;
 				enemy.speedMulti += 0.2;
+				//negRandomizer = rand() % 21;
+				//if (negRandomizer % 2 == 0)
+				//{
+				//	enemy.point1.x += rand() % 51;
+				//	enemy.point2.x += rand() % 51;
+				//	enemy.point3.x += rand() % 51;
+				//	enemy.point1.y += rand() % 51;
+				//	enemy.point2.y += rand() % 51;
+				//	enemy.point3.y += rand() % 51;
+				//}
+				//else
+				//{
+				//	enemy.point1.x -= rand() % 51;
+				//	enemy.point2.x -= rand() % 51;
+				//	enemy.point3.x -= rand() % 51;
+				//	enemy.point1.y -= rand() % 51;
+				//	enemy.point2.y -= rand() % 51;
+				//	enemy.point3.y -= rand() % 51;
+				//}
+				enemy.position = enemy.point1;
+
 			}
 			if (enemy.HitPlayer(player) == true)
 			{
@@ -186,10 +210,14 @@ int main()
 				player.position = { halfScreenWidth - 100.f, halfScreenHeight - 50.f };
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
+				enemy.point1 = { 0, 100, };
+				enemy.point2 = { 1400, 200, };
+				enemy.point3 = { 700, 1000, };
 				for (int i = 0; i < 31; i++)
 				{
 					coinArray[i].isActive = true;
 				}
+				enemy.position = enemy.point1;
 				gameRunning = true;
 			}
 		}
