@@ -22,7 +22,7 @@ int main()
 
 	// Player Setup
 	Player player;
-	player.position = { halfScreenWidth, halfScreenHeight };
+	player.position = { halfScreenWidth - 100.f, halfScreenHeight - 50.f};
 
 	// Enemy Setip
 	Enemy enemy;
@@ -41,7 +41,7 @@ int main()
 
 	
 	// Changing containters
-	Wall coinArray[3];
+	Wall coinArray[31];
 
 
 
@@ -85,13 +85,47 @@ int main()
 				}
 			}
 
-			for (int i = 0; i < 3; i++)
+			for (int i = 0; i < 31; i++)
 			{
 				if (coinArray[i].isActive == true)
 				{
 					coinArray[0].DrawnWall(100, 100, 20, 20, YELLOW);
-					coinArray[1].DrawnWall(760, 100, 20, 20, YELLOW);
-					coinArray[2].DrawnWall(1000, 450, 20, 20, YELLOW);
+					coinArray[1].DrawnWall(310, 100, 20, 20, YELLOW);
+					coinArray[2].DrawnWall(500, 100, 20, 20, YELLOW);
+					coinArray[3].DrawnWall(675, 100, 20, 20, YELLOW);
+					coinArray[4].DrawnWall(850, 100, 20, 20, YELLOW);
+					coinArray[5].DrawnWall(1050, 100, 20, 20, YELLOW);
+					coinArray[6].DrawnWall(1250, 100, 20, 20, YELLOW);
+					coinArray[7].DrawnWall(1460, 100, 20, 20, YELLOW);
+					coinArray[8].DrawnWall(1460, 260, 20, 20, YELLOW);
+					coinArray[9].DrawnWall(1310, 260, 20, 20, YELLOW);
+					coinArray[10].DrawnWall(1080, 275, 20, 20, YELLOW);
+					coinArray[11].DrawnWall(905, 275, 20, 20, YELLOW);
+					coinArray[12].DrawnWall(680, 275, 20, 20, YELLOW);
+
+					coinArray[13].DrawnWall(905, 450, 20, 20, YELLOW);
+					coinArray[14].DrawnWall(1150, 450, 20, 20, YELLOW);
+
+					coinArray[15].DrawnWall(110, 300, 20, 20, YELLOW);
+					coinArray[16].DrawnWall(110, 550, 20, 20, YELLOW);
+					coinArray[17].DrawnWall(350, 550, 20, 20, YELLOW);
+
+					coinArray[18].DrawnWall(300, 300, 20, 20, YELLOW);
+					coinArray[19].DrawnWall(510, 300, 20, 20, YELLOW);
+					coinArray[20].DrawnWall(510, 500, 20, 20, YELLOW);
+					coinArray[21].DrawnWall(190, 810, 20, 20, YELLOW);
+					coinArray[22].DrawnWall(500, 810, 20, 20, YELLOW);
+					coinArray[23].DrawnWall(700, 810, 20, 20, YELLOW);
+					coinArray[24].DrawnWall(900, 810, 20, 20, YELLOW);
+					coinArray[25].DrawnWall(1200, 810, 20, 20, YELLOW);
+					coinArray[26].DrawnWall(1450, 810, 20, 20, YELLOW);
+					coinArray[27].DrawnWall(1450, 450, 20, 20, YELLOW);
+					coinArray[28].DrawnWall(1450, 580, 20, 20, YELLOW);
+					coinArray[29].DrawnWall(1310, 450, 20, 20, YELLOW);
+					coinArray[30].DrawnWall(1310, 580, 20, 20, YELLOW);
+
+
+					
 
 
 					if (coinArray[i].WallToObject(player.colissionPoint) == true)
@@ -115,14 +149,14 @@ int main()
 			//Resets level and adds dificulty once we get enemies. We *could* make this a function but it's only called once in the whole game.
 			//If we added different lose or level complete conditions then we could shorten this into a du
 
-			if (player.coinsCollected == 3)
+			if (player.coinsCollected == 31)
 			{
 				currentLevel += 1;
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i < 31; i++)
 				{
 					coinArray[i].isActive = true;
 				}
-				player.position = { halfScreenWidth, halfScreenHeight };
+				player.position = { halfScreenWidth - 100.f, halfScreenHeight - 50.f };
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
 				enemy.size += 5.f;
@@ -149,10 +183,10 @@ int main()
 				currentLevel = 1;
 				enemy.size = 20;
 				enemy.speedMulti = 1;
-				player.position = { halfScreenWidth, halfScreenHeight };
+				player.position = { halfScreenWidth - 100.f, halfScreenHeight - 50.f };
 				player.coinsCollected = 0;
 				player.currentDirection = { 0.f, 0.f };
-				for (int i = 0; i < 3; i++)
+				for (int i = 0; i < 31; i++)
 				{
 					coinArray[i].isActive = true;
 				}

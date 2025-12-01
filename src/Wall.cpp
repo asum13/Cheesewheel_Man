@@ -20,7 +20,7 @@ Vector2d Wall::DrawnWall(float xPos, float yPos, int width, int length, Color co
 
 		Vector2d wallPoint = { wallLeftPos, wallUpPos };
 		wallPosition = wallPoint;
-		DrawCircle(wallPoint.x, wallPoint.y, 3, RED);
+		//DrawCircle(wallPoint.x, wallPoint.y, 3, RED);
 	
 
 		return wallPosition;
