@@ -21,7 +21,7 @@ void Enemy::Patrol()
 
 	position = position.SetVectorOffset(distance.ScaleVector(speedMulti * GetFrameTime()));
 
-	if (position.DistanceToTarget(pointList[goingPatrol]) < 10)
+	if (position.DistanceToTarget(pointList[goingPatrol]) < 30)
 	{
 		position = pointList[goingPatrol];
 		reachedPoint = true;
@@ -33,7 +33,7 @@ void Enemy::Patrol()
 
 void Enemy::NextPath()
 {
-	int newPath = rand() % 3;
+	int newPath = rand() % 6;
 	if (newPath == currentPatrol)
 	{
 		NextPath();

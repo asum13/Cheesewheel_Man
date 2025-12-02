@@ -28,7 +28,7 @@ int main()
 
 	// Enemy Setip
 	Enemy enemy;
-	enemy.position = { 200, 200 };
+	enemy.position = { 0, 100 };
 	//int negRandomizer = 0;
 
 
@@ -143,6 +143,9 @@ int main()
 			enemy.pointList[0] = enemy.point1;
 			enemy.pointList[1] = enemy.point2;
 			enemy.pointList[2] = enemy.point3;
+			enemy.pointList[3] = enemy.point4;
+			enemy.pointList[4] = enemy.point5;
+			enemy.pointList[5] = enemy.point6;
 
 			enemy.Patrol();
 
@@ -152,7 +155,7 @@ int main()
 			//Resets level and adds dificulty once we get enemies. We *could* make this a function but it's only called once in the whole game.
 			//If we added different lose or level complete conditions then we could shorten this into a du
 
-			if (player.coinsCollected == 1)
+			if (player.coinsCollected == 31)
 			{
 				currentLevel += 1;
 				for (int i = 0; i < 31; i++)
@@ -183,7 +186,7 @@ int main()
 				//	enemy.point2.y -= rand() % 51;
 				//	enemy.point3.y -= rand() % 51;
 				//}
-				enemy.position = enemy.point1;
+				enemy.position = enemy.pointList[enemy.currentPatrol];
 
 			}
 			if (enemy.HitPlayer(player) == true)
@@ -217,7 +220,7 @@ int main()
 				{
 					coinArray[i].isActive = true;
 				}
-				enemy.position = enemy.point1;
+				enemy.position = enemy.position = enemy.pointList[enemy.currentPatrol];
 				gameRunning = true;
 			}
 		}
